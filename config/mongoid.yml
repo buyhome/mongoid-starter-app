@@ -9,9 +9,8 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: my_dev
+  database: starter_devel
 
 test:
   <<: *defaults
-  database: my_test
-
+  database: starter_test
