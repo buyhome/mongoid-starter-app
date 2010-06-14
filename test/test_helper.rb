@@ -38,3 +38,19 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   setup { Sham.reset }
 end
+
+#
+# the Machinist suggested method for creating associations does not work with Mongoid:
+#
+#  Post.make(attributes) do |post|
+#    3.times { post.comments.make }  # this makes Mongoid choke
+#  end
+#
+def make_post_with_associations(n=3)
+  Post.make do |p|
+    n.times do
+      p.tags << Tag.make
+      p.comments << Comment.make
+    end
+  end
+end

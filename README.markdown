@@ -62,17 +62,11 @@ MongoDB databases need not be explicitly created, since they're created lazily b
 
 ## Testing the Mongoid document models with unit tests
 
-Mind you, there's only one unit test for the Post model working, and it's the simplest. But it actually uses successfully Machinist to construct the fixtures and machinist-mongo for Mongoid support.
+Unit tests for Post model test proper MongoDB document creation with Machinist and Mongoid and it's Tag and Comment associations.
 
-Just run it using:
+Just run them using:
 
     $ rake test:units
-    ...
-    Started
-    .
-    Finished in 0.292341 seconds.
-
-    1 tests, 1 assertions, 0 failures, 0 errors
 
 ## Credits
 
