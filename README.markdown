@@ -12,7 +12,7 @@ Alternatively, install MongoDB from sources. See guide at http://library.linode.
 
 ## Install all the Gems required
 
-Note that the Mongoid 1.9.0 gem explicitly required ActiveSupport 2.3.5 (WTF?), so my current Rails stack was:
+Note that the Mongoid 1.9.0 gem explicitly requires ActiveSupport >= 2.2.2, so my current Rails stack was:
 
 * actionmailer (2.3.5)
 * actionpack (2.3.5)
@@ -34,6 +34,8 @@ Note that the Mongoid 1.9.0 gem explicitly required ActiveSupport 2.3.5 (WTF?), 
 * will_paginate (2.3.14)
 
 Except for machinist*, faker and bson_ext, all gems listed are dependecies for Rails and/or Mongoid.
+
+Also, Mongoid 1.9.0 explicitly mentions support for MongoDB 1.4.0.
 
 ## Relevant files
 
@@ -60,9 +62,9 @@ MongoDB databases need not be explicitly created, since they're created lazily b
     ruby-1.8.7-p249 > Comment.all
      => #<Mongoid::Criteria:0xb72bb4f4 @klass=Comment, @selector={}, @options={}, @documents=[]>
 
-## Testing the Mongoid document models with unit tests
+## Testing the document models with unit tests
 
-Unit tests for Post model test proper MongoDB document creation with Machinist and Mongoid and it's Tag and Comment associations.
+Unit tests test proper MongoDB documents creation with Machinist and Mongoid models associations and inheritance.
 
 Just run them using:
 
@@ -73,6 +75,7 @@ Relevant files
 - test/test_helper.rb
 - test/blueprints.rb
 - test/unit/post_test.rb
+- test/unit/event_test.rb
 
 ## Credits
 

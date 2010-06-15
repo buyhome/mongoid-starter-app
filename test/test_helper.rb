@@ -54,3 +54,14 @@ def make_post_with_associations(n=3)
     end
   end
 end
+
+# help me DRY?
+
+def make_event_with_associations(n=3)
+  Event.make do |p|
+    n.times do
+      p.tags << Tag.make
+      p.comments << Comment.make
+    end
+  end
+end
