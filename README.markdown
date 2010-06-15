@@ -68,6 +68,12 @@ Just run them using:
 
     $ rake test:units
 
+Relevant files
+
+- test/test_helper.rb
+- test/blueprints.rb
+- test/unit/post_test.rb
+
 ## Credits
 
 Originally forked from http://github.com/kblake/mongoid-starter-app
