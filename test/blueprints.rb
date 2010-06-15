@@ -6,10 +6,11 @@ require 'sham'
 require 'faker'
 
 Sham.define do
-  owner { Faker::Name.name }
-  name  { Faker::Lorem.words(1) }
-  title { Faker::Lorem.words }
-  body  { Faker::Lorem.sentences }
+  owner    { Faker::Name.name }
+  name     { Faker::Lorem.words(1) }
+  title    { Faker::Lorem.words }
+  body     { Faker::Lorem.sentences }
+  location { Faker::Lorem.words }
 end
 
 Post.blueprint do
@@ -25,4 +26,11 @@ end
 Comment.blueprint do
   owner
   body
+end
+
+Event.blueprint do
+  title
+  location
+  starts_at Date.today
+  finishes_at Date.tomorrow
 end
