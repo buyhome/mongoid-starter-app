@@ -2,6 +2,12 @@ require 'test_helper'
 
 class EventTest < ActiveSupport::TestCase
 
+  test "valid MongoDB document created with Machinist" do
+    assert_difference('Event.count') do
+      Event.make
+    end
+  end
+
   test "inherited attributes from Post model" do
     e = Event.make
     assert_nil e.position

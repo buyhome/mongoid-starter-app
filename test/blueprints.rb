@@ -8,8 +8,8 @@ require 'faker'
 Sham.define do
   owner    { Faker::Name.name }
   name     { Faker::Lorem.words(1) }
-  title    { Faker::Lorem.words }
-  body     { Faker::Lorem.sentences }
+  title    { Faker::Lorem.sentence }
+  body     { Faker::Lorem.paragraphs }
   location { Faker::Lorem.words }
 end
 

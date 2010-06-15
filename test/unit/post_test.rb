@@ -5,7 +5,7 @@ class PostTest < ActiveSupport::TestCase
   #
   # tests that machinist_mongo creates and saves a valid Post mongoDB document
   #
-  test "valid test MongoDB document using Machinist/Mongoid setup" do
+  test "valid MongoDB document created with Machinist" do
     assert_difference('Post.count') do
       Post.make
     end
