@@ -48,10 +48,7 @@ end
 #
 def make_post_with_associations(n=3)
   Post.make do |p|
-    n.times do
-      p.tags << Tag.make
-      p.comments << Comment.make
-    end
+    n.times { p.comments << Comment.make }
   end
 end
 
@@ -59,9 +56,6 @@ end
 
 def make_event_with_associations(n=3)
   Event.make do |p|
-    n.times do
-      p.tags << Tag.make
-      p.comments << Comment.make
-    end
+    n.times { p.comments << Comment.make }
   end
 end

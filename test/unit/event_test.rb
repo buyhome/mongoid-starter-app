@@ -12,25 +12,24 @@ class EventTest < ActiveSupport::TestCase
     event = Event.make
     assert_nil event.position
     assert_not_nil event.owner
+    assert_not_nil event.tags
     assert_not_nil event.published_on
-  end
-
-  #
-  # tests "embeds_many :tags" inherited association from Post model
-  #
-  test "random Tags from inherited association" do
-    total = rand(100)
-    event = make_event_with_associations(total)
-    assert event.tags.count == total
   end
 
   #
   # tests "embeds_many :comments" intherited association from Post model
   #
-  test "random Comments from inherited association" do
+  test "random comments from inherited association" do
     total = rand(100)
     event = make_event_with_associations(total)
     assert event.comments.count == total
+  end
+
+  #
+  # tests Mongoid::Taggable plugin inherited from Post model
+  #
+  test "tag list from inherited tag support" do
+    assert Event.make.tags_array.count == 4
   end
 
 end

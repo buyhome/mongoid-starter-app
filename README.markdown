@@ -45,7 +45,6 @@ Take your time to go thru this very important files for the MongoDB/Mongoid setu
 - config/mongoid.yml
 - config/initializers/mongo.rb
 - app/models/post.rb
-- app/models/tag.rb
 - app/models/comment.rb
 
 ## Testing the MongoDB database connection
@@ -64,19 +63,17 @@ MongoDB databases need not be explicitly created, since they're created lazily b
 
 ## Testing the document models with unit tests
 
-Unit tests test proper MongoDB documents creation with Machinist and Mongoid models associations and inheritance.
+Unit tests test proper MongoDB documents creation with Machinist and Mongoid models associations and inheritance. Also, the [mongoid-taggable][tag] plugin is tested on the Post and it's inherited Event model.
 
 Just run them using:
 
     $ rake test:units
 
-Relevant files
+Relevant files:
 
 - test/test_helper.rb
 - test/blueprints.rb
 - test/unit/post_test.rb
 - test/unit/event_test.rb
 
-## Credits
-
-Originally forked from http://github.com/kblake/mongoid-starter-app
+[tag]: http://github.com/wilkerlucio/mongoid_taggable
