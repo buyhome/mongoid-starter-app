@@ -22,14 +22,15 @@ class EventTest < ActiveSupport::TestCase
   test "random comments from inherited association" do
     total = rand(100)
     event = make_event_with_associations(total)
-    assert event.comments.count == total
+    assert_equal event.comments.count, total
   end
 
   #
   # tests Mongoid::Taggable plugin inherited from Post model
   #
   test "tag list from inherited tag support" do
-    assert Event.make.tags_array.count == 4
+    event = Event.make
+    assert_equal event.tags_array.count, 4
   end
 
 end

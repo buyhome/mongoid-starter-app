@@ -56,8 +56,6 @@ MongoDB databases need not be explicitly created, since they're created lazily b
 
     ruby-1.8.7-p249 > Post.all
      => #<Mongoid::Criteria:0xb72f66f8 @klass=Post, @selector={}, @options={}, @documents=[]>
-    ruby-1.8.7-p249 > Tag.all
-     => #<Mongoid::Criteria:0xb72e0740 @klass=Tag, @selector={}, @options={}, @documents=[]>
     ruby-1.8.7-p249 > Comment.all
      => #<Mongoid::Criteria:0xb72bb4f4 @klass=Comment, @selector={}, @options={}, @documents=[]>
 
